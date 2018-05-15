@@ -22,11 +22,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
         // TODO code application logic here
         Player playerOne = new Player();
-        playerOne.setName("Fred Flintstone");
-        playerOne.setBestTime(7.00);
-        
-        String playerOneName = playerOne.getName();
-        double playerOneBestTime = playerOne.getBestTime();
+        playerOne.setName("Kevin");
         
         System.out.println(playerOne.toString());
         System.out.println(TeamMember.Tyler.getName());
