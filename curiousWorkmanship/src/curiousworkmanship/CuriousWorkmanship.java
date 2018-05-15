@@ -5,6 +5,9 @@
  */
 package curiousworkmanship;
 
+import byui.cit260.curiousWorkmanship.model.Actor;
+import byui.cit260.curiousWorkmanship.model.Player;
+
 /**
  *
  * @author kbingham
@@ -16,6 +19,16 @@ public class CuriousWorkmanship {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Player playerOne = new Player();
+        playerOne.setName("Fred Flintstone");
+        playerOne.setBestTime(7.00);
+        
+        String playerOneName = playerOne.getName();
+        double playerOneBestTime = playerOne.getBestTime();
+        
+        System.out.println(playerOne.toString());
+        System.out.println(Actor.Father.getName());
+        System.out.println(Actor.Father.getDescription());
     }
     
 }
