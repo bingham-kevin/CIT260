@@ -6,6 +6,7 @@
 package byui.cit260.curiousWorkmanship.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -16,6 +17,7 @@ public class Player implements Serializable{
     
     private String name;
     private double bestTime;
+    private ArrayList<Game> games = new ArrayList<Game>();
 
     public Player() {
     }
@@ -35,6 +37,14 @@ public class Player implements Serializable{
 
     public void setBestTime(double bestTime) {
         this.bestTime = bestTime;
+    }
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
     }
 
     @Override
