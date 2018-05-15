@@ -8,6 +8,8 @@
 package cityOfAaron;
 
 import cityOfAaron.model.CropData;
+import cityOfAaron.model.ListItem;
+import cityOfAaron.model.Location;
 import cityOfAaron.model.TeamMember;
 import cityOfAaron.model.Player;
 
@@ -24,6 +26,9 @@ public class CityOfAaron {
         // TODO code application logic here
         Player playerOne = new Player();
         playerOne.setName("Kevin");
+        
+        Player playerTwo = new Player();
+        playerTwo.setName("Tyler");
         
         CropData yearOne = new CropData();
         yearOne.setYear(1);
@@ -42,12 +47,23 @@ public class CityOfAaron {
         yearOne.setPeopleFed(134);
         yearOne.setEatenByRats(89);
         yearOne.setWheatForPeople(300);
-               
+        
+        ListItem itemOne = new ListItem();
+        itemOne.setName("Shovel");
+        itemOne.setNumber(1);
+        
+        Location locationOne = new Location();
+        locationOne.setDescription("Castle");
+        locationOne.setSymbol("Image of Castle");
         
         System.out.println(playerOne.toString());
+        System.out.println(playerTwo.toString());
         System.out.println(TeamMember.Tyler.getName());
         System.out.println(TeamMember.Tyler.getTitle());
         System.out.println(yearOne.toString());
+        System.out.println(itemOne.toString());
+        System.out.println(locationOne.toString());
+        
     }
     
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package cityOfAaron.model;
 
 import java.io.Serializable;
@@ -13,25 +12,35 @@ import java.util.Objects;
  *
  * @author kbingham
  */
-public class Game implements Serializable{
+public class ListItem implements Serializable{
     
-    private Player player;
+    private String name;
+    private int number;
 
-    public Game() {
+    public ListItem() {
     }
 
-    public Player getPlayer() {
-        return player;
+    public String getName() {
+        return name;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.player);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.name);
+        hash = 79 * hash + this.number;
         return hash;
     }
 
@@ -46,8 +55,11 @@ public class Game implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Game other = (Game) obj;
-        if (!Objects.equals(this.player, other.player)) {
+        final ListItem other = (ListItem) obj;
+        if (this.number != other.number) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
@@ -55,9 +67,8 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "player=" + player + '}';
+        return "ListItem{" + "name=" + name + ", number=" + number + '}';
     }
     
-
     
 }

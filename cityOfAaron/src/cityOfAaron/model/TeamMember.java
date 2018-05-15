@@ -6,12 +6,15 @@
 
 package cityOfAaron.model;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author kbingham
  */
-public enum TeamMember {
+public enum TeamMember implements Serializable{
+    
     Tyler("Tyler", "Team member of Group 5."),
     Kevin("Kevin", "Team member of Group 5.");
     

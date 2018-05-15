@@ -5,11 +5,14 @@
  */
 package cityOfAaron.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author kbingham
  */
-public class CropData {
+public class CropData implements Serializable{
+    
     private int year;
     private int population;
     private int acresOwned;
