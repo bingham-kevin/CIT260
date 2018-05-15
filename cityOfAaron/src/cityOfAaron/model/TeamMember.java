@@ -1,8 +1,7 @@
 /*
- * The main() class file for the cityOfAaron project
- * CIT-260
- * Spring 2018
- *  Team members: Kevin Bingham, Tyler Day
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 package cityOfAaron.model;
@@ -13,8 +12,8 @@ package cityOfAaron.model;
  * @author kbingham
  */
 public enum TeamMember {
-    Member1("Tyler", "Team member of Group 5."),
-    Member2("Kevin", "Team member of Group 5.");
+    Tyler("Tyler", "Team member of Group 5."),
+    Kevin("Kevin", "Team member of Group 5.");
     
     private String name;
     private String title;

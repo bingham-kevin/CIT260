@@ -29,8 +29,8 @@ public class CityOfAaron {
         double playerOneBestTime = playerOne.getBestTime();
         
         System.out.println(playerOne.toString());
-        System.out.println(TeamMember.Member1.getName());
-        System.out.println(TeamMember.Member1.getTitle());
+        System.out.println(TeamMember.Tyler.getName());
+        System.out.println(TeamMember.Tyler.getTitle());
     }
     
 }
