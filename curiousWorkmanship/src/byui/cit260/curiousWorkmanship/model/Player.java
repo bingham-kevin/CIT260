@@ -5,6 +5,7 @@
  */
 package byui.cit260.curiousWorkmanship.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
