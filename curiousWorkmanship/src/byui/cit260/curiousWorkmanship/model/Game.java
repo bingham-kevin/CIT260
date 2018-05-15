@@ -6,6 +6,7 @@
 package byui.cit260.curiousWorkmanship.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -13,28 +14,10 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     
-    private double totalTime;
-    private double noPeople;
+    
     private Player player;
 
     public Game() {
-    }
-
- 
-    public double getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(double totalTime) {
-        this.totalTime = totalTime;
-    }
-
-    public double getNoPeople() {
-        return noPeople;
-    }
-
-    public void setNoPeople(double noPeople) {
-        this.noPeople = noPeople;
     }
 
     public Player getPlayer() {
@@ -44,13 +27,11 @@ public class Game implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.noPeople) ^ (Double.doubleToLongBits(this.noPeople) >>> 32));
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.player);
         return hash;
     }
 
@@ -66,10 +47,7 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.noPeople) != Double.doubleToLongBits(other.noPeople)) {
+        if (!Objects.equals(this.player, other.player)) {
             return false;
         }
         return true;
@@ -77,9 +55,9 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
+        return "Game{" + "player=" + player + '}';
     }
     
-    
+
     
 }
