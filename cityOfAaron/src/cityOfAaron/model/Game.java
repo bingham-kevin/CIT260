@@ -15,23 +15,23 @@ import java.util.Objects;
  */
 public class Game implements Serializable{
     
-    private Player player;
+    private Player thePlayer;
 
     public Game() {
     }
 
-    public Player getPlayer() {
-        return player;
+    public Player getThePlayer() {
+        return thePlayer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setThePlayer(Player thePlayer) {
+        this.thePlayer = thePlayer;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.player);
+        hash = 53 * hash + Objects.hashCode(this.thePlayer);
         return hash;
     }
 
@@ -47,7 +47,7 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.player, other.player)) {
+        if (!Objects.equals(this.thePlayer, other.thePlayer)) {
             return false;
         }
         return true;
@@ -55,7 +55,7 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "player=" + player + '}';
+        return "Game{" + "player=" + thePlayer + '}';
     }
     
 
