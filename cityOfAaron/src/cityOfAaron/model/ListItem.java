@@ -59,10 +59,7 @@ public class ListItem implements Serializable{
         if (this.number != other.number) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
 
     @Override

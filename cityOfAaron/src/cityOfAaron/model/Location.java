@@ -59,10 +59,7 @@ public class Location implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.symbol, other.symbol)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.symbol, other.symbol);
     }
 
     @Override
