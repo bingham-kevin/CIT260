@@ -8,7 +8,6 @@ package cityOfAaron.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -17,7 +16,6 @@ import java.util.Objects;
  */
 public class Game implements Serializable{
     
-    private Map theMap;
     private Player thePlayer;
     private CropData cropData;
     private ArrayList<ListItem> animals;
@@ -25,14 +23,6 @@ public class Game implements Serializable{
     private ArrayList<ListItem> provisions;
 
     public Game() {
-    }
-
-    public Map getTheMap() {
-        return theMap;
-    }
-
-    public void setTheMap(Map theMap) {
-        this.theMap = theMap;
     }
 
     public Player getThePlayer() {
@@ -78,7 +68,6 @@ public class Game implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.theMap);
         hash = 71 * hash + Objects.hashCode(this.thePlayer);
         hash = 71 * hash + Objects.hashCode(this.cropData);
         hash = 71 * hash + Objects.hashCode(this.animals);
@@ -99,9 +88,7 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.theMap, other.theMap)) {
-            return false;
-        }
+
         if (!Objects.equals(this.thePlayer, other.thePlayer)) {
             return false;
         }
@@ -119,7 +106,9 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "theMap=" + theMap + ", thePlayer=" + thePlayer + ", cropData=" + cropData + ", animals=" + animals + ", tools=" + tools + ", provisions=" + provisions + '}';
-    } 
+        return "Game{" + "thePlayer=" + thePlayer + ", cropData=" + cropData + ", animals=" + animals + ", tools=" + tools + ", provisions=" + provisions + '}';
+    }
+
     
+
 }
