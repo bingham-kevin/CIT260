@@ -18,12 +18,6 @@ public class Game implements Serializable{
     
     private Player thePlayer;
     private CropData cropData;
-    private ArrayList<ListItem> animals;
-    private ArrayList<ListItem> tools;
-    private ArrayList<ListItem> provisions;
-
-    public Game() {
-    }
 
     public Player getThePlayer() {
         return thePlayer;
@@ -41,38 +35,11 @@ public class Game implements Serializable{
         this.cropData = cropData;
     }
 
-    public ArrayList<ListItem> getAnimals() {
-        return animals;
-    }
-
-    public void setAnimals(ArrayList<ListItem> animals) {
-        this.animals = animals;
-    }
-
-    public ArrayList<ListItem> getTools() {
-        return tools;
-    }
-
-    public void setTools(ArrayList<ListItem> tools) {
-        this.tools = tools;
-    }
-
-    public ArrayList<ListItem> getProvisions() {
-        return provisions;
-    }
-
-    public void setProvisions(ArrayList<ListItem> provisions) {
-        this.provisions = provisions;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.thePlayer);
-        hash = 71 * hash + Objects.hashCode(this.cropData);
-        hash = 71 * hash + Objects.hashCode(this.animals);
-        hash = 71 * hash + Objects.hashCode(this.tools);
-        hash = 71 * hash + Objects.hashCode(this.provisions);
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.thePlayer);
+        hash = 47 * hash + Objects.hashCode(this.cropData);
         return hash;
     }
 
@@ -88,25 +55,18 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-
         if (!Objects.equals(this.thePlayer, other.thePlayer)) {
             return false;
         }
         if (!Objects.equals(this.cropData, other.cropData)) {
             return false;
         }
-        if (!Objects.equals(this.animals, other.animals)) {
-            return false;
-        }
-        if (!Objects.equals(this.tools, other.tools)) {
-            return false;
-        }
-        return Objects.equals(this.provisions, other.provisions);
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + ", cropData=" + cropData + ", animals=" + animals + ", tools=" + tools + ", provisions=" + provisions + '}';
+        return "Game{" + "thePlayer=" + thePlayer + ", cropData=" + cropData + '}';
     }
 
     

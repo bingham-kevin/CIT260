@@ -8,7 +8,6 @@
 package cityOfAaron;
 
 import cityOfAaron.model.CropData;
-import cityOfAaron.model.ListItem;
 import cityOfAaron.model.Location;
 import cityOfAaron.model.TeamMember;
 import cityOfAaron.model.Player;
@@ -48,10 +47,6 @@ public class CityOfAaron {
         yearOne.setEatenByRats(89);
         yearOne.setWheatForPeople(300);
         
-        ListItem itemOne = new ListItem();
-        itemOne.setName("Shovel");
-        itemOne.setNumber(1);
-        
         Location locationOne = new Location();
         locationOne.setDescription("Castle");
         locationOne.setSymbol("Image of Castle");
@@ -61,7 +56,6 @@ public class CityOfAaron {
         System.out.println(TeamMember.Tyler.getName());
         System.out.println(TeamMember.Tyler.getTitle());
         System.out.println(yearOne.toString());
-        System.out.println(itemOne.toString());
         System.out.println(locationOne.toString());
         
     }
