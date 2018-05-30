@@ -1,5 +1,5 @@
 /*
- * The main() class file for the cityOfAaron project
+ * The Game class file for the cityOfAaron project
  * CIT-260
  * Spring 2018
  *  Team members: Kevin Bingham, Tyler Day
