@@ -13,6 +13,8 @@ package Control;
 // Pre-conditions: bushels of wheat must be positive
 // and 1 <= the number of acres owned, population must be greater than 10% of the total of 
 // acresOwned and acresToBuy
+
+import cityOfAaron.model.CropData;
 import java.util.Random;
 
 
