@@ -31,28 +31,35 @@ public class CropControl {
         int acresAfterTransaction = acresOwned + acresToBuy;
         int population = cropData.getPopulation();
         
-        if (population <= (acresAfterTransaction/10) ){
+        if (population <= (acresAfterTransaction/10) )
+            return -1;
+        
         //if acresToBuy < 0, return -1
         if (acresToBuy < 0)
             return -1;
+        
         //If wheatInStore < 0, return -1
         int wheatInStore = cropData.getWheatInStore();
         if (acresOwned < 0)
             return -1;
+        
         int wheatPrice =random.nextInt(LAND_RANGE)+LAND_BASE;
+        
         //if acresToBuy > wheatInStore / landPrice, return -1
         if (acresToBuy > acresOwned/wheatPrice)
             return -1;
+        
         //totalAcres = acresToBuy + acresOwned (this has been simplified)
         acresOwned+=acresToBuy;
         cropData.setAcresOwned(acresOwned);
+        
         //totalCost = acresToBuy * landPrice
         //remainingWheat  = wheatInStore - totalCost (both of these have been simplified and combined)
         wheatInStore-=(acresToBuy*wheatPrice);
         cropData.setWheatInStore(wheatInStore);
+        
         //Return int remainingWheat (renamed and correctly coded)
         return wheatInStore;
     }
-        return -1;
-    }      
+
 }
