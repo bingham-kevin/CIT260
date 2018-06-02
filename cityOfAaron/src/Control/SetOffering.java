@@ -1,15 +1,16 @@
-// the SetOffering class - part of the control layer
-// class sets the percentage that will be offered
-// Author: Kevin Bingham
-// Date last modified: May 2018
-
+/** The SetOffering class - part of the control layer
+* class sets the percentage that will be offered
+* Author: Kevin Bingham
+* Date last modified: May 2018
+*/
 package Control;
 
-// To setOffering
-// Purpose: Set offering percentage
-// Parameters: Percentage to offer
-// Pre-conditions: Percentage must be positive
-// and equal to or less than 100
+/* To setOffering
+ * Purpose: Set offering percentage
+ * Parameters: Percentage to offer
+ * Pre-conditions: Percentage must be positive
+ * and equal to or less than 100
+ */
 
 import cityOfAaron.model.CropData;
 
@@ -20,12 +21,13 @@ public class SetOffering {
     private static final int HIGH_OFFERING = 100;
     
     public static int setOffering(int offering, CropData cropData){
-        // if offering is negative or greater than 100, return -1
+        // if offering is negative, return -1
         if ( offering < LOW_OFFERING )
             return -1;
+        // if offering is greater than 100, return -1
         if ( offering > HIGH_OFFERING )
             return -1;
-        
+        // return offering percentage
         return offering;
     }
     
