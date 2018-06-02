@@ -20,9 +20,9 @@ public class SetOfferingTest {
     @Test
     public void testSetOfferingOne() {
         System.out.println("setOfferingOne");
-        int offering = 0;
+        int offering = 10;
         CropData cropData = null;
-        int expResult = 0;
+        int expResult = 10;
         int result = SetOffering.setOffering(offering, cropData);
         assertEquals(expResult, result);
     }
@@ -31,7 +31,7 @@ public class SetOfferingTest {
         System.out.println("setOfferingTwo");
         int offering = 101;
         CropData cropData = null;
-        int expResult = 101;
+        int expResult = -1;
         int result = SetOffering.setOffering(offering, cropData);
         assertEquals(expResult, result);
     }
@@ -41,7 +41,7 @@ public class SetOfferingTest {
         System.out.println("setOfferingThree");
         int offering = -3;
         CropData cropData = null;
-        int expResult = -3;
+        int expResult = -1;
         int result = SetOffering.setOffering(offering, cropData);
         assertEquals(expResult, result);
     }
