@@ -21,7 +21,9 @@ public class SetOffering {
     
     public static int setOffering(int offering, CropData cropData){
         // if offering is negative or greater than 100, return -1
-        if ( ( offering < LOW_OFFERING ) || ( offering > HIGH_OFFERING ) )
+        if ( offering < LOW_OFFERING )
+            return -1;
+        if ( offering > HIGH_OFFERING )
             return -1;
         
         return offering;

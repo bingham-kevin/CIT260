@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Test FeedPeople class functions
+ * Author Tyler Day
+ * Date last modified: May 2018
  */
 package Control;
 
@@ -9,10 +9,6 @@ import cityOfAaron.model.CropData;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author mjd12
- */
 public class FeedPeopleTest {
     
     public FeedPeopleTest() {
@@ -31,27 +27,27 @@ public class FeedPeopleTest {
         int expResult = 750;
         int result = FeedPeople.feedPeople(userWheat, cropData);
         assertEquals(expResult, result);
-        fail("something went wrong here");
+        // fail("something went wrong here");
     }
+    @Test
     public void testFeedPeopleErrorOne() {
         System.out.println("feedPeople");
         int userWheat = 250;
         CropData cropData = new CropData();
         cropData.setWheatInStore(000);
-        int expResult = -1;
+        int expResult = -250;
         int result = FeedPeople.feedPeople(userWheat, cropData);
         assertEquals(expResult, result);
-        fail("something went wrong here");
     }
+    @Test
     public void testFeedPeopleErrorTwo() {
         System.out.println("feedPeople");
         int userWheat = -200;
         CropData cropData = new CropData();
         cropData.setWheatInStore(1000);
-        int expResult = -1;
+        int expResult = 1200;
         int result = FeedPeople.feedPeople(userWheat, cropData);
         assertEquals(expResult, result);
-        fail("something went wrong here");
     }
     
 }
