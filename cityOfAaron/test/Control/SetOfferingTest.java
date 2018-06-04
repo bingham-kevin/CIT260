@@ -23,7 +23,7 @@ public class SetOfferingTest {
         int offering = 10;
         CropData cropData = null;
         int expResult = 10;
-        int result = SetOffering.setOffering(offering, cropData);
+        int result = CropControl.setOffering(offering, cropData);
         assertEquals(expResult, result);
     }
     @Test
@@ -32,7 +32,7 @@ public class SetOfferingTest {
         int offering = 101;
         CropData cropData = null;
         int expResult = -1;
-        int result = SetOffering.setOffering(offering, cropData);
+        int result = CropControl.setOffering(offering, cropData);
         assertEquals(expResult, result);
     }
 
@@ -42,7 +42,7 @@ public class SetOfferingTest {
         int offering = -3;
         CropData cropData = null;
         int expResult = -1;
-        int result = SetOffering.setOffering(offering, cropData);
+        int result = CropControl.setOffering(offering, cropData);
         assertEquals(expResult, result);
     }
     

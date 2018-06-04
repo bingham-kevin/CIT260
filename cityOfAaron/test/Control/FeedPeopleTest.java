@@ -25,7 +25,7 @@ public class FeedPeopleTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(1000);
         int expResult = 750;
-        int result = FeedPeople.feedPeople(userWheat, cropData);
+        int result = CropControl.feedPeople(userWheat, cropData);
         assertEquals(expResult, result);
         // fail("something went wrong here");
     }
@@ -36,7 +36,7 @@ public class FeedPeopleTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(000);
         int expResult = -1;
-        int result = FeedPeople.feedPeople(userWheat, cropData);
+        int result = CropControl.feedPeople(userWheat, cropData);
         assertEquals(expResult, result);
     }
     @Test
@@ -46,7 +46,7 @@ public class FeedPeopleTest {
         CropData cropData = new CropData();
         cropData.setWheatInStore(1000);
         int expResult = -1;
-        int result = FeedPeople.feedPeople(userWheat, cropData);
+        int result = CropControl.feedPeople(userWheat, cropData);
         assertEquals(expResult, result);
     }
     

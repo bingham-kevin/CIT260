@@ -23,6 +23,8 @@ public class CropControl {
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
     private static Random random = new Random();
+    private static final int LOW_OFFERING = 0;
+    private static final int HIGH_OFFERING = 100;
     
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData)
     {
@@ -60,6 +62,31 @@ public class CropControl {
         
         //Return int remainingWheat (renamed and correctly coded)
         return wheatInStore;
+    }
+    public static int feedPeople(int userWheat, CropData cropData) {
+        int wheatInStore = cropData.getWheatInStore();
+        //If userWheat < 0, return Error, 
+        if (userWheat < 1){
+            return -1;
+        }
+        //Else, if userWheat > wheatInStore, return error
+        if (userWheat > wheatInStore){
+            return -1;
+        }
+        //Else, wheatInStore = wheatInStore-userWheat
+        wheatInStore-=userWheat;
+        cropData.setWheatInStore(wheatInStore);
+        return wheatInStore;
+    }
+    public static int setOffering(int offering, CropData cropData){
+        // if offering is negative, return -1
+        if ( offering < LOW_OFFERING )
+            return -1;
+        // if offering is greater than 100, return -1
+        if ( offering > HIGH_OFFERING )
+            return -1;
+        // return offering percentage
+        return offering;
     }
 
 }
