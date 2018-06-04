@@ -63,6 +63,20 @@ public class CropControl {
         //Return int remainingWheat (renamed and correctly coded)
         return wheatInStore;
     }
+    /** the FeedPeople class - part of the control layer
+     * class contains all of the calculation methods for deciding how much food 
+     * will be set aside for the people
+     * Author: Tyler Day
+     * Date last modified: May 2018
+     */
+    
+    // To FeedPeople
+    // Purpose: To set aside some grain to feed the city's population
+    // Parameters: the amount of wheat input by a user to set aside
+    //	and a reference to a CropData object
+    // Returns: the total wheat remaining after setting aside a portion
+    // Pre-conditions: bushels of wheat must be positive
+    // and wheat set aside must be positive, and less than the total amount of wheat
     public static int feedPeople(int userWheat, CropData cropData) {
         int wheatInStore = cropData.getWheatInStore();
         //If userWheat < 0, return Error, 
@@ -78,6 +92,18 @@ public class CropControl {
         cropData.setWheatInStore(wheatInStore);
         return wheatInStore;
     }
+    /** The SetOffering class - part of the control layer
+     * class sets the percentage that will be offered
+     * Author: Kevin Bingham
+     * Date last modified: May 2018
+     */
+    
+     /* To setOffering
+     * Purpose: Set offering percentage
+     * Parameters: Percentage to offer
+     * Pre-conditions: Percentage must be positive
+     * and equal to or less than 100
+     */
     public static int setOffering(int offering, CropData cropData){
         // if offering is negative, return -1
         if ( offering < LOW_OFFERING )
