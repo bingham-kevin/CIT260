@@ -130,7 +130,8 @@ public class MainMenuView {
         CityOfAaron.setCurrentGame(theGame);
         
         // Display the Banner Page.
-        System.out.println("\nWelcome to the city of Aaron.");
+        System.out.println("\nWelcome to the city of Aaron."
+                           +"\nThe lives in the city are under your control1");
         
         // Create a new Player object
         Player thePlayer = new Player();
