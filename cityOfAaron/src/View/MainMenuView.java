@@ -11,8 +11,7 @@ package View;
 
 import java.util.Scanner;
 import cityOfAaron.CityOfAaron;
-import cityOfAaron.model.Player;
-import cityOfAaron.model.Game;
+import Model.*;
 
 public class MainMenuView {
     Scanner keyboard = new Scanner(System.in);
@@ -131,7 +130,8 @@ public class MainMenuView {
         
         // Display the Banner Page.
         System.out.println("\nWelcome to the city of Aaron."
-                           +"\nThe lives in the city are under your control1");
+                           +"\nThe lives in the city are under your control");
+
         
         // Create a new Player object
         Player thePlayer = new Player();
@@ -150,7 +150,25 @@ public class MainMenuView {
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
 
-        // Display the Game menu
+        // Create a CropData object, 
+        CropData cropData = new CropData();
+
+        // initialize it
+        cropData.setYear(0);
+        cropData.setPopulation(100);
+        cropData.setNewPeople(5);
+        cropData.setCropYield(3);
+        cropData.setNumberWhoDied(0);
+        cropData.setOffering(10);
+        cropData.setWheatInStore(2700);
+        cropData.setAcresOwned(1000);
+        cropData.setAcresPlanted(1000);
+        cropData.setHarvest(3000);
+        cropData.setOfferingBushels(300);
+        cropData.setAcresPlanted(1000); 
+        
+         // save a reference to it in the Game 
+        theGame.setCropData(cropData);
      }
      
      // The startSavedGame method

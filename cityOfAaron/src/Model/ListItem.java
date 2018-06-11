@@ -4,7 +4,7 @@
  * Spring 2018
  *  Team members: Kevin Bingham, Tyler Day
  */
-package cityOfAaron.model;
+package Model;
 
 import java.io.Serializable;
 import java.util.Objects;

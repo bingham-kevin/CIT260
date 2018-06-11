@@ -14,7 +14,7 @@ package Control;
 // and 1 <= the number of acres owned, population must be greater than 10% of the total of 
 // acresOwned and acresToBuy
 
-import cityOfAaron.model.CropData;
+import Model.CropData;
 import java.util.Random;
 
 
@@ -64,11 +64,11 @@ public class CropControl {
         return wheatInStore;
     }
     /** the FeedPeople class - part of the control layer
-     * class contains all of the calculation methods for deciding how much food 
-     * will be set aside for the people
-     * Author: Tyler Day
-     * Date last modified: May 2018
-     */
+      * class contains all of the calculation methods for deciding how much food 
+      * will be set aside for the people
+      * Author: Tyler Day
+      * Date last modified: May 2018
+      */
     
     // To FeedPeople
     // Purpose: To set aside some grain to feed the city's population
@@ -93,17 +93,17 @@ public class CropControl {
         return wheatInStore;
     }
     /** The SetOffering class - part of the control layer
-     * class sets the percentage that will be offered
-     * Author: Kevin Bingham
-     * Date last modified: May 2018
-     */
+      * class sets the percentage that will be offered
+      * Author: Kevin Bingham
+      * Date last modified: May 2018
+      */
     
      /* To setOffering
-     * Purpose: Set offering percentage
-     * Parameters: Percentage to offer
-     * Pre-conditions: Percentage must be positive
-     * and equal to or less than 100
-     */
+      * Purpose: Set offering percentage
+      * Parameters: Percentage to offer
+      * Pre-conditions: Percentage must be positive
+      * and equal to or less than 100
+      */
     public static int setOffering(int offering, CropData cropData){
         // if offering is negative, return -1
         if ( offering < LOW_OFFERING )
@@ -115,4 +115,12 @@ public class CropControl {
         return offering;
     }
 
+    // calcLandCost() method
+    // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
+    // Parameters: none
+    // Returns: the land cost
+    public static int calcLandCost(){
+          int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;  
+          return landPrice;            
+     }
 }

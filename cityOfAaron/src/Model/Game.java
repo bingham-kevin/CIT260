@@ -5,7 +5,7 @@
  *  Team members: Kevin Bingham, Tyler Day
  */
 
-package cityOfAaron.model;
+package Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     private Player thePlayer;
-    private CropData cropData;
+    private CropData cropData = null;
 
     public Player getThePlayer() {
         return thePlayer;
@@ -27,13 +27,21 @@ public class Game implements Serializable{
     public void setThePlayer(Player thePlayer) {
         this.thePlayer = thePlayer;
     }
-
+    
+    // the getCrops() method
+    // Purpose: get a reference to the crop object
+    // Parameters: none
+    // Returns: a reference to a crop object
     public CropData getCropData() {
         return cropData;
     }
-
-    public void setCropData(CropData cropData) {
-        this.cropData = cropData;
+    
+    // the setCrops() method
+    // Purpose: store a reference to a crop object
+    // Parameters: a reference to a crop object
+    // Returns: none
+    public void setCropData(CropData _cropRef) {
+        cropData = _cropRef;
     }
 
     @Override
