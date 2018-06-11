@@ -10,7 +10,7 @@
 package cityOfAaron;
 
 import View.*;
-import cityOfAaron.model.Game;
+import Model.Game;
 
 public class CityOfAaron {
     // variable for keeping a reference to the Game object
