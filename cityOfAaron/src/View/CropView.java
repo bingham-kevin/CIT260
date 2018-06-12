@@ -22,7 +22,7 @@ public class CropView {
 // Purpose: runs the cityOfAaron game
 // Parameters: none
 // Returns: none
-public static void runCropsView(){
+public static void runCropView(){
     // call the buyLandView( ) method
     buyLandView();
 
@@ -33,7 +33,7 @@ public static void runCropsView(){
 // The buyLandView method
 // Purpose: interface with the user input for buying land
 // Parameters: none
-// Returns: none1
+// Returns: none
  public static void buyLandView(){
      // Get the cost of land for this round.
      int price = CropControl.calcLandCost();
@@ -48,5 +48,57 @@ public static void runCropsView(){
 
     // Call the buyLand( ) method in the control layer to buy the land
     CropControl.buyLand(toBuy, price, cropData);
+    }
+ 
+// The sellLandView method
+// Purpose: interface with the user input for selling land
+// Parameters: none
+// Returns: none
+ public static void sellLandView(){
+     // Get the cost of land for this round.
+     int price = CropControl.calcLandCost();
+     
+     // Prompt the user to enter the number of acres to sell
+     System.out.format("Land is selling for %d bushels per acre.%n",price);
+     System.out.print("\nHow many acres of land do you wish to sell? "); 
+     
+     //  Get the user’s input and save it.
+    int toSell;
+    toSell = keyboard.nextInt();
+    
+     // Call the sellLand( ) method in the control layer to sell the land
+    CropControl.sellLand(toSell, price, cropData);
+    }
+
+// The feedPeopleView method
+// Purpose: interface with the user input for feeding people
+// Parameters: none
+// Returns: none
+ public static void feedPeopleView(){
+     
+    }
+ 
+// The platCropsView method
+// Purpose: interface with the user input for planting crops
+// Parameters: none
+// Returns: none
+ public static void plantCropsView(){
+        
+    }
+ 
+// The showStarvedView method
+// Purpose: show user how many people staved
+// Parameters: none
+// Returns: none
+ public static void showStarvedView(){
+     
+    }
+ 
+ // The displayCropsReport method
+// Purpose: show users crops report
+// Parameters: none
+// Returns: none
+ public static void displayCropsReportView(){
+     
     }
 }
