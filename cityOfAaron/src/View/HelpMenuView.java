@@ -99,48 +99,48 @@ public class HelpMenuView {
     // ===================================       
     public void doAction(int option){
         switch(option){
-            case 1: // create and start a new game
-                helpMenuGoals();
+            case 1: // show goals help
+                viewGoals();
                 break;
-            case 2: // get and start a saved game
-                helpMenuCityOfAaron();
+            case 2: // show where the City of Aaron is
+                cityOfAaronHelp();
                 break;
             case 3: // get help menu
-                helpMenuMap();
+                viewMapHelp();
                 break;
-            case 4: // save game
-                helpMenuMove();
+            case 4: // show move help
+                viewMoveHelp();
                 break;
-            case 5:
-                helpMenuItems();
+            case 5: // show list help
+                viewListHelp();
                 break;
-            case 6:
-                helpMenuBack();
+            case 6: // return to main menu
+                backToMainMenu();
                 break;
         }
     }
     
-    public void helpMenuGoals(){
+    public void viewGoals(){
         System.out.println("\nHelp option 1 selected.");
     }
     
-    public void helpMenuCityOfAaron(){
+    public void cityOfAaronHelp(){
         System.out.println("\nHelp option 2 selected.");
     }
    
-    public void helpMenuMap(){
+    public void viewMapHelp(){
         System.out.println("\nHelp option 3 selected.");
     }
     
-    public void helpMenuMove(){
+    public void viewMoveHelp(){
         System.out.println("\nHelp option 4 selected.");
     }
     
-    public void helpMenuItems(){
+    public void viewListHelp(){
         System.out.println("\nHelp option 5 selected.");
     }
     
-    public void helpMenuBack(){
+    public void backToMainMenu(){
         System.out.println("\nHelp option 6 selected.");
     }
 }
