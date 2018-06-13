@@ -186,7 +186,11 @@ public class MainMenuView {
      // Returns: none
      // ===================================     
      public void displayHelpMenuView(){
-         System.out.println("\nHelp option selected.");
+         //create HelpMenuView object
+        HelpMenuView helpMenu = new HelpMenuView();
+        
+        // display help me
+        helpMenu.displayMenuView();
      }
 
      // The displaySaveGameView method
