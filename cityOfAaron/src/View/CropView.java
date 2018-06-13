@@ -1,8 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * -------------------------------------------------------------
+ * The CropView class - part of the view layer
+ * Object of this class manages the crop view
+ * Author: Kevin Bingham and Tyler Day team
+ * Date last modified: June 2018
+ * -------------------------------------------------------------
  */
+
 package View;
 
 import Model.*;
@@ -23,11 +27,23 @@ public class CropView {
 // Parameters: none
 // Returns: none
 public static void runCropView(){
-    // call the buyLandView( ) method
+    // call the buyLandView() method
     buyLandView();
-
-    // add calls to the other crop view methods
-    // as they are written
+    
+    // call the sellLandView() method
+    sellLandView();
+    
+    // call the feedPeopleView() method
+    feedPeopleView();
+    
+    // call plantCropsView() method
+    plantCropsView();
+    
+    // call the showStarvedView() method
+    showStarvedView();
+    
+    // call the displayCropsReportView() method
+    displayCropsReportView();
 }
 
 // The buyLandView method
@@ -75,6 +91,7 @@ public static void runCropView(){
 // Parameters: none
 // Returns: none
  public static void feedPeopleView(){
+     // Get the number of people fed for this round.
      
     }
  
@@ -82,7 +99,7 @@ public static void runCropView(){
 // Purpose: interface with the user input for planting crops
 // Parameters: none
 // Returns: none
- public static void plantCropsView(){
+ public static void plantCropsView(){ 
         
     }
  
