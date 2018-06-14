@@ -169,6 +169,9 @@ public class MainMenuView {
         
          // save a reference to it in the Game 
         theGame.setCropData(cropData);
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenuView();
      }
      
      // The startSavedGame method
