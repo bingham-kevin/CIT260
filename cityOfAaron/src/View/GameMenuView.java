@@ -20,7 +20,7 @@ public class GameMenuView {
     private int max;
     private static Game game = CityOfAaron.getCurrentGame();
     
-     // The GameMenuView constructor
+    // The GameMenuView constructor
     // Purpose: Initialize the menu data
     // Parameters: none
     // Returns: none
@@ -29,10 +29,10 @@ public class GameMenuView {
         "**********************************\n" +
         "*** CITY OF AARON: GAME MENU  ****\n" +
         "**********************************\n" +
-        " 1 - View the Map\n" +
-        " 2 - choose a List to View\n" +
-        " 3 - Move to a new Location\n" +
-        " 4 - Manage your Crops\n";
+        " 1 - View The Map\n" +
+        " 2 - Choose a List to View\n" +
+        " 3 - Move to a New Location\n" +
+        " 4 - Manage Your Crops\n";
         max = 4;
     }
     // The displayMenuView method
@@ -62,7 +62,7 @@ public class GameMenuView {
           } while (menuOption != max);
 
     }
-           // The getMenuOption method
+    // The getMenuOption method
     // Purpose: gets the user's input
     // Parameters: none
     // Returns: integer - the option selected
@@ -115,25 +115,25 @@ public class GameMenuView {
             public void viewMap() {
                 System.out.println("\n Map of the City of Aaron and surrounding lands");
             }
-                      //The View List method
+            //The View List method
             //purpose: to display the list of tools animals provisions and team
             //Parameters: none.
             //Returns: none
             public void viewList() {
                 System.out.println("A list of your items and other resources");
             }
-                      //The Move to new location method
+            //The Move to new location method
             //purpose: to switch the game to a new location
             //Parameters: none.
             //Returns: none
             public void moveToNewLocation() {
                 System.out.println ("Select a location to travel to");
             }
-                      //The manage crops method
+            //The manage crops method
             //purpose: to open the display for managing crops
             //Parameters: none.
             //Returns: none
             public void manageCrops() {
-                System.out.println("What do you want to do with your crops?");
+                CropView.runCropView();
             }
 }
