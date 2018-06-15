@@ -168,7 +168,7 @@ public class CropControl {
         wheatInStore+=harvestAfterOffering;
         //save total wheatInStore back to setWheatInStore method
         cropData.setWheatInStore(wheatInStore);
-        //return harvested bushels after paying offering
+        //return harvested bushels after paying 
         return harvestAfterOffering;
     }
 
