@@ -149,6 +149,28 @@ public class CropControl {
         // return offering percentage
         return offering;
     }
+    
+    // payOffering
+    public static int payOffering(int harvest, int offering, CropData cropData ){
+        int wheatInStore = cropData.getWheatInStore();
+        
+        //if harvest is negative, return -1
+        if ( harvest < 0)
+            return -1;
+        //if offering is negative, return -1
+        if ( offering < 0 )
+            return -1;
+        //calculate offeringBushels
+        int offeringBushels = harvest * offering;
+        //calculate harvestAfterOffering
+        int harvestAfterOffering = harvest - offeringBushels;
+        //add harvestAfterOffering to wheatInStore
+        wheatInStore+=harvestAfterOffering;
+        //save total wheatInStore back to setWheatInStore method
+        cropData.setWheatInStore(wheatInStore);
+        //return harvested bushels after paying offering
+        return harvestAfterOffering;
+    }
 
     // calcLandCost() method
     // Purpose: Calculate a random land cost between 17 and 26 bushels/acre
