@@ -137,7 +137,7 @@ public class MainMenuView extends MenuView{
         HelpMenuView helpMenu = new HelpMenuView();
         
         // display help me
-        helpMenu.displayMenuView();
+        helpMenu.displayMenu();
      }
 
      // The displaySaveGameView method

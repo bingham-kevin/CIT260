@@ -120,7 +120,8 @@ public class GameMenuView {
             //Parameters: none.
             //Returns: none
             public void viewList() {
-                System.out.println("A list of your items and other resources");
+                ListMenuView listMenu = new ListMenuView();
+                listMenu.displayMenu();
             }
             //The Move to new location method
             //purpose: to switch the game to a new location
