@@ -9,14 +9,10 @@
 
 package View;
 
-import java.util.Scanner;
 import cityOfAaron.CityOfAaron;
 import Model.*;
 
 public class ListMenuView extends MenuView{
-    Scanner keyboard = new Scanner(System.in);
-    private String menu;
-    private int max;
 
     public ListMenuView() {
         super("\n" +

@@ -9,14 +9,10 @@
 
 package View;
 
-import java.util.Scanner;
 import cityOfAaron.CityOfAaron;
 import Model.*;
 
 public class MainMenuView extends MenuView{
-    Scanner keyboard = new Scanner(System.in);
-    private String menu;
-    private int max;
     
     // The MainMenuView constructor
     // Purpose: Initialize the menu data

@@ -14,9 +14,6 @@ import cityOfAaron.CityOfAaron;
 import Model.*;
 
 public class HelpMenuView extends MenuView{
-    Scanner keyboard = new Scanner(System.in);
-    private String menu;
-    private int max;
     
     // The HelpMenuView constructor
     // Purpose: Initializr the menu data
