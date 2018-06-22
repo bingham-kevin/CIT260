@@ -57,8 +57,7 @@ public class HelpMenuView extends MenuView{
                 viewListHelp();
                 break;
             case 6: // return to main menu
-                backToMainMenu();
-                break;
+                return;
         }
     }
     
@@ -80,9 +79,5 @@ public class HelpMenuView extends MenuView{
     
     public void viewListHelp(){
         System.out.println("\nHelp option 5 selected.");
-    }
-    
-    public void backToMainMenu(){
-        System.out.println("\nHelp option 6 selected.");
     }
 }

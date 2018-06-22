@@ -111,7 +111,7 @@ public class MainMenuView extends MenuView{
         theGame.setCropData(cropData);
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenuView();
+        gameMenu.displayMenu();
      }
      
      // The startSavedGame method

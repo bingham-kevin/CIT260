@@ -22,8 +22,9 @@ public class ListMenuView extends MenuView{
                " 1 - List or view the animals in the storehouse\n" +
                " 2 - List or view the tools in the storehouse\n" +
                " 3 - List or view the provisions in the storehouse\n" +
-               " 4 - List or view the authors of this game\n", 
-                4);
+               " 4 - List or view the authors of this game\n" +
+               " 5 - Return to previous menu\n", 
+                5);
     }
 
     @Override
@@ -45,6 +46,8 @@ public class ListMenuView extends MenuView{
                 //listTeam();
                 System.out.println("Option 4");
                 break;
+            case 5: //previous menu
+                return;
         }
     }
 }

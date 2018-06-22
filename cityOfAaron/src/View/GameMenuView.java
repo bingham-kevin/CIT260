@@ -32,15 +32,16 @@ public class GameMenuView extends MenuView {
         " 1 - View The Map\n" +
         " 2 - Choose a List to View\n" +
         " 3 - Move to a New Location\n" +
-        " 4 - Manage Your Crops\n",
-        4);
+        " 4 - Manage Your Crops\n" +
+        " 5 - Return to Main Menu\n"        ,
+        5);
     }
     // The doAction method
     // Purpose: performs the selected action
     // Parameters: none
     // Returns: none
     // ===================================   
-            @Override public void doAction(int option){
+    @Override public void doAction(int option){
         switch(option){
             case 1: // view the city map
                 viewMap();
@@ -54,6 +55,8 @@ public class GameMenuView extends MenuView {
             case 4: // manage the crops
                 manageCrops();
                 break;
+            case 5: // return to Main Menu
+                return;
         }
     } 
             //The View Map method
