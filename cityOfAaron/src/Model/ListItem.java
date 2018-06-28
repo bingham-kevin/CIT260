@@ -24,10 +24,10 @@ public class ListItem implements Serializable {
         this.number = number;
     }
 
-    public String getName () {
+    public String getName() {
         return name;
     }
-    public void setName (String name) {
+    public void setName(String name) {
         this.name= name;
     }
     public int getNumber () {

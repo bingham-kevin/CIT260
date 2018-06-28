@@ -89,7 +89,7 @@ public class MainMenuView extends MenuView{
         
         // call the createNewGame( ) method. Pass the name as a parameter
             GameControl.createNewGame(name);
-        
+
         //show the game menu
             GameMenuView gmv = new GameMenuView();
             gmv.displayMenu();

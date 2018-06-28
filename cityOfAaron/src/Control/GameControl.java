@@ -26,7 +26,13 @@ public class GameControl {
    // create the player object. Save it in the game object
    Player thePlayer = new Player();
    thePlayer.setName(pName);
-   theGame.setThePlayer(thePlayer); 
+   theGame.setThePlayer(thePlayer);
+   
+   createCropDataObject();
+   createAnimalList();
+   createProvisionsList();
+   createToolsList();
+   createMap();
    }
 
     public static void createCropDataObject(){
@@ -49,7 +55,7 @@ public class GameControl {
     }
     
     public static void createAnimalList(){
-        ArrayList<ListItem> animals = new ArrayList<ListItem>();
+        ArrayList<ListItem> animals = new ArrayList<>();
         
         animals.add(new ListItem("cows", 12));
         animals.add(new ListItem("horses", 3));

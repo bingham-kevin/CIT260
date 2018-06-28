@@ -54,7 +54,7 @@ public class Game implements Serializable{
     }
     
     public ArrayList<ListItem> getAnimals() {
-        return this.animals;
+        return animals;
     }
 
     public void setAnimals(ArrayList<ListItem> animals) {

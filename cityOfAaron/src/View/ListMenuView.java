@@ -49,11 +49,10 @@ public class ListMenuView extends MenuView{
     }
 
     private void listAnimals(){
-        Game theGame = CityOfAaron.getCurrentGame();
-        ArrayList<ListItem> animals = theGame.getAnimals();
-        
-        for(int i = 0; i< animals.size(); i++){
-            ListItem animal = animals.get(i);
+       Game theGame = CityOfAaron.getCurrentGame();
+       ArrayList<ListItem> animals = theGame.getAnimals();
+       
+       for(ListItem animal : animals){
             String itemName = animal.getName();
             int itemNumber = animal.getNumber();
             System.out.println(itemName + ": " + itemNumber);
