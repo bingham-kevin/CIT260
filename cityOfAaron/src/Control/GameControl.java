@@ -122,8 +122,39 @@ public class GameControl {
         loc = new Location();
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!");
-        theMap.setLocation(0, 2, loc);
-
+        for(int i = 0; i < MAX_ROW-3; i++){
+            for(int o = 0; o < MAX_COL; o++){
+        theMap.setLocation(i, o, loc);
+            }
+        }
+        String mountain = "the mountains north of the City of Aaron," + 
+                "/nthey provde a natural defense for the city!";
+        loc = new Location();
+        loc.setDescription(mountain);
+        loc.setSymbol("MMM");
+        for(int i = 2; i < MAX_COL-1; i++){
+            theMap.setLocation(0, i, loc);
+        }
+        String city = "The grand City of Aaron, over which you rule";
+        loc = new Location();
+        loc.setDescription(city);
+        loc.setSymbol("^^^");
+        for(int i = 1; i < MAX_ROW-3; i++){
+            for(int o = 2; o < MAX_COL-1; o++){
+                theMap.setLocation(i, o, loc);
+            }
+        }
+        String forest = "Our Wonderful Southern Forests!" + 
+                "/nWild Game roams them,"+
+                "/n and their beauty enhances the City's luster!";
+        loc = new Location();
+        loc.setDescription(forest);
+        loc.setSymbol("FFF");
+        for(int i = 3; i < MAX_ROW; i++){
+            for(int o = 2; o < MAX_COL-1; o++){
+                theMap.setLocation(i, o, loc);
+            }
+        }
         theGame.setMap(theMap);
     }
 }
