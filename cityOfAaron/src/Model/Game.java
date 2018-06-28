@@ -1,7 +1,7 @@
 /*
- * The Game class file for the cityOfAaron project
- * CIT-260
- * Spring 2018
+ *  The Game class file for the cityOfAaron project
+ *  CIT-260
+ *  Spring 2018
  *  Team members: Kevin Bingham, Tyler Day
  */
 
@@ -11,14 +11,23 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
-/**
- *
- * @author kbingham
- */
 public class Game implements Serializable{
     
+    private Map theMap;
     private Player thePlayer;
     private CropData cropData = null;
+    private ArrayList<ListItem> animals;
+    private ArrayList<ListItem> tools;
+    private ArrayList<ListItem> provisions;
+    private boolean done;
+
+    public Map getMap() {
+        return theMap;
+    }
+
+    public void setMap(Map theMap) {
+        this.theMap = theMap;
+    }
 
     public Player getThePlayer() {
         return thePlayer;
@@ -43,7 +52,35 @@ public class Game implements Serializable{
     public void setCropData(CropData _cropRef) {
         cropData = _cropRef;
     }
+    
+    public ArrayList<ListItem> getAnimals() {
+        return this.animals;
+    }
 
+    public void setAnimals(ArrayList<ListItem> animals) {
+        this.animals = animals;
+    }
+
+    public ArrayList<ListItem> getTools() {
+        return this.tools;
+    }
+
+    public void setTools(ArrayList<ListItem> tools) {
+        this.tools = tools;
+    }
+
+    public ArrayList<ListItem> getProvisions() {
+        return provisions;
+    }
+
+    public void setProvisions(ArrayList<ListItem> provisions) {
+        this.provisions = provisions;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 3;

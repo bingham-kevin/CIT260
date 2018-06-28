@@ -19,8 +19,11 @@ public class ListItem implements Serializable {
     private String name;
     private int number; 
     
-    public ListItem () {   
+    public ListItem (String name, int number){
+        this.name = name;
+        this.number = number;
     }
+
     public String getName () {
         return name;
     }
@@ -57,10 +60,7 @@ public class ListItem implements Serializable {
         if (this.number != other.number) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
 
     @Override

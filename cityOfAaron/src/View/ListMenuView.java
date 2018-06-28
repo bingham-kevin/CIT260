@@ -11,6 +11,7 @@ package View;
 
 import cityOfAaron.CityOfAaron;
 import Model.*;
+import java.util.ArrayList;
 
 public class ListMenuView extends MenuView{
 
@@ -31,23 +32,57 @@ public class ListMenuView extends MenuView{
     public void doAction(int option) {
         switch(option){
             case 1: // show goals help
-                //listAnimals();
-                System.out.println("Option 1");
+                listAnimals();
                 break;
             case 2: // show where the City of Aaron is
-                //listTools();
-                System.out.println("Option 2");
+                listTools();
                 break;
             case 3: // get help menu
-                //listProvisions();
-                System.out.println("Option 3");
+                listProvisions();
                 break;
             case 4: // show move help
-                //listTeam();
-                System.out.println("Option 4");
+                listTeam();
                 break;
             case 5: //previous menu
                 return;
         }
+    }
+
+    private void listAnimals(){
+        Game theGame = CityOfAaron.getCurrentGame();
+        ArrayList<ListItem> animals = theGame.getAnimals();
+        
+        for(int i = 0; i< animals.size(); i++){
+            ListItem animal = animals.get(i);
+            String itemName = animal.getName();
+            int itemNumber = animal.getNumber();
+            System.out.println(itemName + ": " + itemNumber);
+        }
+    }
+
+    private void listTools() {
+        Game theGame = CityOfAaron.getCurrentGame();
+        ArrayList<ListItem> tools = theGame.getTools();
+        
+        for(ListItem tool : tools){
+            String itemName = tool.getName();
+            int itemNumber = tool.getNumber();
+            System.out.println(itemName + ": " + itemNumber);
+        }
+    }
+
+    private void listProvisions() {
+        Game theGame = CityOfAaron.getCurrentGame();
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+        
+        for(ListItem provision : provisions){
+            String itemName = provision.getName();
+            int itemNumber = provision.getNumber();
+            System.out.println(itemName + ": " + itemNumber);
+        }
+    }
+
+    private void listTeam() {
+
     }
 }
