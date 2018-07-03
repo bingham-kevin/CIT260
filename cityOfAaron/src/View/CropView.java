@@ -11,6 +11,7 @@ package View;
 
 import Model.*;
 import Control.*;
+import Exception.CropException;
 import java.util.Scanner;
 import cityOfAaron.CityOfAaron;
 
@@ -39,6 +40,9 @@ public static void runCropView(){
     // call plantCropsView() method
     plantCropsView();
     
+    // call the setOffering() method
+    setOfferingView();
+    
     // call the showStarvedView() method
     showStarvedView();
     
@@ -56,14 +60,23 @@ public static void runCropView(){
 
      // Prompt the user to enter the number of acres to buy
      System.out.format("Land is selling for %d bushels per acre.%n",price);
-     System.out.print("\nHow many acres of land do you wish to buy? "); 
 
     //  Get the user’s input and save it.
     int toBuy;
-    toBuy = keyboard.nextInt();
-
-    // Call the buyLand( ) method in the control layer to buy the land
-    CropControl.buyLand(toBuy, price, cropData);
+    boolean paramsNotOkay;
+        do{
+           paramsNotOkay = false;
+           System.out.print("\nHow many acres of land do you wish to buy? ");  
+           toBuy = keyboard.nextInt();
+           try{
+                CropControl.buyLand(price, toBuy, cropData);
+            }
+           catch(CropException e){
+                 System.out.println("I am sorry master, I cannot do this.");
+                 System.out.println(e.getMessage());
+                 paramsNotOkay = true;
+            }
+        }while(paramsNotOkay);
     }
  
 // The sellLandView method
@@ -101,6 +114,32 @@ public static void runCropView(){
 // Returns: none
  public static void plantCropsView(){ 
         
+    }
+ 
+// The setOfferingView method
+// Purpose: interface with the user input for setting the offering
+// Parameters: none
+// Returns: none
+ public static void setOfferingView(){ 
+     // Prompt the user to choose a percentage of wheat to offer
+     System.out.print("\nWhat percentage do you wish to offer? ");
+     
+     //get user input and save it
+     int offering;
+     boolean paramsNotOkay;
+     do{
+        paramsNotOkay = false;
+        offering = keyboard.nextInt();
+        try{
+            CropControl.setOffering(offering, cropData);
+        }
+        catch(CropException e){
+             System.out.println("I am sorry master, I cannot do this.");
+             System.out.println(e.getMessage());
+             System.out.println("\nWhat percentage do you wish to offer? ");
+             paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);
     }
  
 // The showStarvedView method

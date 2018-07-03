@@ -6,6 +6,7 @@
 //------------------------------------------------------------
 package Control;
 
+import Exception.CropException;
 import Model.CropData;
 import java.util.Random;
 
@@ -27,29 +28,29 @@ public class CropControl {
     // Pre-conditions: bushels of wheat must be positive
     // and 1 <= the number of acres owned, population must be greater than 10% of the total of 
     // acresOwned and acresToBuy
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData){
-        //if population  < totalAcres / 10, return -1 (not sure what to do with this one)
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData) throws CropException{
         int acresOwned = cropData.getAcresOwned();
         int acresAfterTransaction = acresOwned + acresToBuy;
         int population = cropData.getPopulation();
         
-        if (population <= (acresAfterTransaction/10) )
-            return -1;
+        //if population  < totalAcres / 10, return -1 (not sure what to do with this one)
+        if (population < (acresAfterTransaction/10) )
+            throw new CropException("You do not have enough people to tend the land.");
         
-        //if acresToBuy < 0, return -1
+        //if acresToBuy < 0, return error
         if (acresToBuy < 0)
-            return -1;
+            throw new CropException("A negative value was input");
         
-        //If wheatInStore < 0, return -1
+        //If wheatInStore < 0, return error
         int wheat = cropData.getWheatInStore();
         if (acresOwned < 0)
-            return -1;
+            throw new CropException("There is insufficient wheat to buy this much land");
         
         int wheatPrice = random.nextInt(LAND_RANGE)+LAND_BASE;
         
-        //if acresToBuy > wheatInStore / landPrice, return -1
+        //if acresToBuy > wheatInStore / landPrice, return error
         if (acresToBuy > acresOwned/wheatPrice)
-            return -1;
+            throw new CropException("You do not have enough wheat to buy this much land.");
         
         //totalAcres = acresToBuy + acresOwned (this has been simplified)
         acresOwned+=acresToBuy;
@@ -61,7 +62,7 @@ public class CropControl {
         cropData.setWheatInStore(wheat);
         
         //Return int remainingWheat (renamed and correctly coded)
-        return acresOwned;
+        cropData.setWheatInStore(wheat);
     }
      /* The sellLand class - part of the control layer
       * class to sell land
@@ -83,6 +84,7 @@ public class CropControl {
         //If acresToSell is negative, return -1
         if (acresToSell < 0)
             return -1;
+        
         //if acresToSell is > than acresOwned, return -1
         if (acresToSell > acresOwned)
             return -1;
@@ -112,20 +114,22 @@ public class CropControl {
     // Returns: the total wheat remaining after setting aside a portion
     // Pre-conditions: bushels of wheat must be positive
     // and wheat set aside must be positive, and less than the total amount of wheat
-    public static int feedPeople(int userWheat, CropData cropData){
+    public static void feedPeople(int userWheat, CropData cropData)throws CropException{
         int wheatInStore = cropData.getWheatInStore();
+        
         //If userWheat < 0, return Error, 
-        if (userWheat < 1){
-            return -1;
+        if (userWheat < 0){
+            throw new CropException("You entered a negative number.");
         }
+        
         //Else, if userWheat > wheatInStore, return error
         if (userWheat > wheatInStore){
-            return -1;
+            throw new CropException("You do not have enough wheat.");
         }
+        
         //Else, wheatInStore = wheatInStore-userWheat
         wheatInStore-=userWheat;
         cropData.setWheatInStore(wheatInStore);
-        return wheatInStore;
     }
     /** The SetOffering class - part of the control layer
       * class sets the percentage that will be offered
@@ -139,15 +143,15 @@ public class CropControl {
       * Pre-conditions: Percentage must be positive
       * and equal to or less than 100
       */
-    public static int setOffering(int offering, CropData cropData){
-        // if offering is negative, return -1
+    public static void setOffering(int offering, CropData cropData)throws CropException{
+        // check offering parameters - do they meet requirements
         if ( offering < LOW_OFFERING )
-            return -1;
-        // if offering is greater than 100, return -1
+            throw new CropException("A negative number was input.");
+
         if ( offering > HIGH_OFFERING )
-            return -1;
+            throw new CropException("A number greater than 100 was input.");
         // return offering percentage
-        return offering;
+        cropData.setOffering(offering);
     }
     
     // payOffering
