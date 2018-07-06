@@ -89,15 +89,27 @@ public static void runCropView(){
      
      // Prompt the user to enter the number of acres to sell
      System.out.format("Land is selling for %d bushels per acre.%n",price);
-     System.out.print("\nHow many acres of land do you wish to sell? "); 
+
      
      //  Get the user’s input and save it.
     int toSell;
+    boolean paramsNotOkay;
+         do{
+           paramsNotOkay = false;
+             System.out.print("\nHow many acres of land do you wish to sell? "); 
+                
     toSell = keyboard.nextInt();
     
      // Call the sellLand( ) method in the control layer to sell the land
-    CropControl.sellLand(toSell, price, cropData);
-    }
+    try{
+                CropControl.sellLand(price, toSell, cropData);
+            }
+        catch(CropException e) {
+                 System.out.println("I am sorry master, I cannot do this.");
+             System.out.println(e.getMessage());
+             paramsNotOkay = true;
+       }
+ }while(paramsNotOkay);
 
 // The feedPeopleView method
 // Purpose: interface with the user input for feeding people
