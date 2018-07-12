@@ -16,9 +16,6 @@ import Control.*;
 
 
 public class SaveGameView extends MenuView {
-    Scanner keyboard = new Scanner(System.in);
-    private String gameMenu;
-    private int max;
     private static Game game = CityOfAaron.getCurrentGame();
     
     // The SaveGameView constructor
@@ -37,7 +34,7 @@ public class SaveGameView extends MenuView {
     
     @Override public void doAction(int option){
         switch(option){
-            case 1: // vsave game
+            case 1: // save game
                 saveGame();
                 break;
             case 2: // return to main menu
