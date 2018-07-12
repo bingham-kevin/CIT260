@@ -12,6 +12,7 @@ package View;
 import Control.GameControl;
 import cityOfAaron.CityOfAaron;
 import Model.*;
+import java.util.Scanner;
 
 public class MainMenuView extends MenuView{
     
@@ -96,13 +97,27 @@ public class MainMenuView extends MenuView{
      }
      
      // The startSavedGame method
-     // Purpose: get game object and starts saved game
+     // Purpose: loads a saved game object from disk and start the game
      // Parameters: none
      // Returns: none
      // ===================================     
      public void startSavedGame(){
-         System.out.println("\nStart saved game option selected.");
-     }
+        Scanner input = new Scanner(System.in);
+        
+      // get rid of nl character left in the stream
+        input.nextLine();
+        
+      // prompt user and get a file path
+        System.out.println("What is the full path of the game you would like to load?");
+        String path = input.next();
+        
+      // call the getSavedGame( ) method in the GameControl class to load the game
+        GameControl.getSavedGame(path);  
+      
+      // display the game menu for the loaded game
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenu();
+    }
      
      // The displayHelpMenuView method
      // Purpose: opens help menu
@@ -123,6 +138,7 @@ public class MainMenuView extends MenuView{
      // Returns: none
      // ===================================     
      public void displaySaveGameView(){
-         System.out.println("\nDisplay save game menu.");
+       SaveGameView saveGameView = new SaveGameView();
+       saveGameView.displayMenu();
      }
 }

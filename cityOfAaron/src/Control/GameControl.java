@@ -8,6 +8,10 @@ package Control;
 import java.util.ArrayList;
 import cityOfAaron.CityOfAaron;
 import Model.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GameControl {
    // size of the Locations array
@@ -157,4 +161,37 @@ public class GameControl {
         }
         theGame.setMap(theMap);
     }
+    
+    // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filePath){
+        Game theGame = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game)  input.readObject();
+            CityOfAaron.setCurrentGame(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
+    }
+
+    public static void saveCurrentGame(Game theGame, String name) {
+        try (FileOutputStream fips = new FileOutputStream(name))
+        {
+            ObjectOutputStream output = new ObjectOutputStream(fips);
+            output.writeObject(theGame);
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving the game to disk");
+        }
+        
+        }
 }
