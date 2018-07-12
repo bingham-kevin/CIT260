@@ -5,8 +5,10 @@
  */
 package Model;
 
+import java.io.Serializable;
 
-public class Map {
+
+public class Map implements Serializable{
     private int rowCount;               // stores the number of rows 
     private int colCount;               // stores the number of columns
     private Location[][] locations;     // a reference to a 2-dimensional array
@@ -29,7 +31,7 @@ public class Map {
    // Parameters: a row and column
    // Returns: a Location object
    public Location getLocation(int row, int col){
-   return locations[row][col];
+     return locations[row][col];
    }
 
     // The setLocation method

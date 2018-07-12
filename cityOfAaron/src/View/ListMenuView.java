@@ -11,7 +11,9 @@ package View;
 
 import cityOfAaron.CityOfAaron;
 import Model.*;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ListMenuView extends MenuView{
 
@@ -24,8 +26,9 @@ public class ListMenuView extends MenuView{
                " 2 - List or view the tools in the storehouse\n" +
                " 3 - List or view the provisions in the storehouse\n" +
                " 4 - List or view the authors of this game\n" +
-               " 5 - Return to previous menu\n", 
-                5);
+               " 5 - Save list of tools\n"+
+               " 6 - Return to previous menu\n", 
+                6);
     }
 
     @Override
@@ -43,7 +46,10 @@ public class ListMenuView extends MenuView{
             case 4: // show move help
                 listTeam();
                 break;
-            case 5: //previous menu
+            case 5: //save tool list
+                saveTools();
+                break;
+            case 6: //previous menu
                 return;
         }
     }
@@ -82,6 +88,65 @@ public class ListMenuView extends MenuView{
     }
 
     private void listTeam() {
-
+        
+    }
+    
+    // The saveTools method
+    // Purpose: save the list of tools to a file
+    // Parameters: none
+    // Returns: none
+    private void saveTools(){
+        Scanner keyboard = new Scanner(System.in);
+        
+        // declare a string to hold the file name
+        String fileName = null;
+        
+        // declare a reference to a PrintWriter object
+        PrintWriter output = null;
+        
+        // prompt the user for a file name, get and save the user’s input
+        System.out.println("What name would you like save this list as?");
+        fileName = keyboard.next();
+        
+        try{
+            // create the PrintWriter object
+              output = new PrintWriter(fileName);
+              
+            // get a reference to the ArrayList you want to output
+              Game theGame = CityOfAaron.getCurrentGame();
+              ArrayList<ListItem> tools = theGame.getTools();
+              
+            // output a heading for the report
+            output.println("\n\n           Tool List             ");
+            output.printf("%n%-20s%10s", "  Tool", "Quantity ");
+            output.printf("%n%-20s%10s", "----------", "----------");
+            
+            // use a for loop to get the data from the ArrayList
+            // and output it
+            for (ListItem tool : tools){
+                output.printf("%n%-20s%10s", tool.getName()
+                                           , tool.getNumber());
+            }
+            
+            // output completion message
+            System.out.println("File save completed. File name is " + fileName + ".");
+        }
+        catch(Exception e){
+            // output error message
+            System.out.println("Error was encountered.");
+        }
+        finally{
+            // if(output != null) close the file
+            if (fileName != null){
+                try{
+                 // close file
+                 output.close();
+                }
+                catch(Exception ex1){
+                 // output error message
+                 System.out.println("Error was encountered.");   
+                }
+            }
+        }
     }
 }
