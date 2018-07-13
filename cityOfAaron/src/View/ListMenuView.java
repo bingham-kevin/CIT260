@@ -26,9 +26,10 @@ public class ListMenuView extends MenuView{
                " 2 - List or view the tools in the storehouse\n" +
                " 3 - List or view the provisions in the storehouse\n" +
                " 4 - List or view the authors of this game\n" +
-               " 5 - Save list of tools\n"+
-               " 6 - Return to previous menu\n", 
-                6);
+               " 5 - Save list of animals"+
+               " 6 - Save list of tools\n"+
+               " 7 - Return to previous menu\n", 
+                7);
     }
 
     @Override
@@ -46,10 +47,12 @@ public class ListMenuView extends MenuView{
             case 4: // show move help
                 listTeam();
                 break;
-            case 5: //save tool list
-                saveTools();
+            case 5: //save animals list
+                saveAnimals();
                 break;
-            case 6: //previous menu
+            case 6://save tools list
+                saveTools();
+            case 7: //previous menu
                 return;
         }
     }
@@ -145,6 +148,61 @@ public class ListMenuView extends MenuView{
                 catch(Exception ex1){
                  // output error message
                  System.out.println("Error was encountered.");   
+                }
+            }
+        }
+    }
+    private void saveAnimals() {
+       //ensure that the scanner is functioning 
+        Scanner keyboard = new Scanner(System.in);
+        
+        // declare a string to hold the file path
+        String fileName = null;
+        
+        // declare a reference to a PrintWriter object
+        PrintWriter output = null;
+        
+        // prompt the user for a file path, and get and save the user’s input
+        System.out.println("What would you like to name this list?");
+        fileName = keyboard.next();
+        
+        try{
+            // create the PrintWriter object to save the list 
+              output = new PrintWriter(fileName);
+              
+            // get a reference to the ArrayList you want to output
+              Game theGame = CityOfAaron.getCurrentGame();
+              ArrayList<ListItem> animals = theGame.getAnimals();
+              
+            // output a heading for the report you want to make
+            output.println("\n\n           Animal List             ");
+            output.printf("%n%-20s%10s", "  Animal", "Quantity ");
+            output.printf("%n%-20s%10s", "----------", "----------");
+            
+            // use a for loop to get the data from the ArrayList
+            // and output it to the file
+            for (ListItem animal : animals){
+                output.printf("%n%-20s%10s", animal.getName()
+                                           , animal.getNumber());
+            }
+            
+            // output completion message
+            System.out.println("Your file save was completed. The File name is " + fileName + ".");
+        }
+        catch(Exception e){
+            // output a generic error message
+            System.out.println("An error was encountered.");
+        }
+        finally{
+            // if the file name is not empty, close the file
+            if (fileName != null){
+                try{
+                 // close the file
+                 output.close();
+                }
+                catch(Exception ex1){
+                 // output an error message
+                 System.out.println("An error was encountered.");   
                 }
             }
         }
