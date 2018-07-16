@@ -26,7 +26,7 @@ public class ListMenuView extends MenuView{
                " 2 - List or view the tools in the storehouse\n" +
                " 3 - List or view the provisions in the storehouse\n" +
                " 4 - List or view the authors of this game\n" +
-               " 5 - Save list of animals"+
+               " 5 - Save list of animals\n"+
                " 6 - Save list of tools\n"+
                " 7 - Return to previous menu\n", 
                 7);
