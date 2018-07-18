@@ -186,12 +186,11 @@ public static void runCropView(){
     
     System.out.println(
         "*******************************************************************\n"+
-        "*                       Yearly Report                             *\n"+
-        "*******************************************************************\n"+
-        "This is year "+ year +".\n"+
-        "*******************************************************************\n"+             
+        "*                                                                 *\n"+
+        "*                     Yearly Report - Year "+ year +"                      *\n"+
+        "*                                                                 *\n"+
+        "*******************************************************************\n"+           
         "Currently you own "+ acresOwned +" acres.\n"+
-        "*******************************************************************\n"+
         "The population of the city is "+ population +".\n"+
         "Last year the number who died was "+ numberWhoDied +".\n"+
          newPeople +" new people have moved to your city.\n"+
