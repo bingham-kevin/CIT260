@@ -28,6 +28,9 @@ public class CropView {
 // Parameters: none
 // Returns: none
 public static void runCropView(){
+    // call the displayCropsReportView() method
+    displayCropsReportView();
+    
     // call the buyLandView() method
     buyLandView();
     
@@ -45,9 +48,6 @@ public static void runCropView(){
     
     // call the showStarvedView() method
     showStarvedView();
-    
-    // call the displayCropsReportView() method
-    displayCropsReportView();
 }
 
 // The buyLandView method
@@ -162,11 +162,51 @@ public static void runCropView(){
      
     }
  
- // The displayCropsReport method
+// The displayCropsReport method
 // Purpose: show users crops report
 // Parameters: none
 // Returns: none
  public static void displayCropsReportView(){
-     
+    int year= cropData.getYear();
+    int population= cropData.getPopulation();
+    int acresOwned= cropData.getAcresOwned();
+    int cropYield= cropData.getCropYield();
+    int wheatInStore= cropData.getWheatInStore();
+    int numberWhoDied= cropData.getNumberWhoDied();
+    int newPeople= cropData.getNewPeople();
+    int harvest= cropData.getHarvest();
+    int harvestAfterOffering= cropData.getHarvestAfterOffering();
+    int offering= cropData.getOffering();
+    int offeringBushels= cropData.getOfferingBushels();
+    int peopleFed= cropData.getPeopleFed();
+    int acresPlanted= cropData.getAcresPlanted();
+    int numStarved= cropData.getNumStarved();
+    int eatenByRats= cropData.getEatenByRats();
+    int wheatForPeople= cropData.getWheatForPeople();
+    
+    System.out.println(
+        "*******************************************************************\n"+
+        "*                       Yearly Report                             *\n"+
+        "*******************************************************************\n"+
+        "This is year "+ year +".\n"+
+        "*******************************************************************\n"+             
+        "Currently you own "+ acresOwned +" acres.\n"+
+        "*******************************************************************\n"+
+        "The population of the city is "+ population +".\n"+
+        "Last year the number who died was "+ numberWhoDied +".\n"+
+         newPeople +" new people have moved to your city.\n"+
+         numStarved +" starved in the city.\n"+
+        "*******************************************************************\n"+
+        "There are "+ wheatInStore+" bushels of wheat in the storehouse.\n"+
+        "The most recent harvest was "+ harvest +" bushels.\n"+
+        "*******************************************************************\n"+
+        "The amount chosen for an offering is "+ offering +"% of the harvest.\n"+
+        "The total number of bushels offered is "+ offeringBushels +".\n"+
+        "*******************************************************************\n"+
+        "The city was able to feed "+ peopleFed +" people.\n"+
+         acresPlanted +" were planted.\n"+
+        "Rats ate "+ eatenByRats +" bushels of wheat.\n"+
+         wheatForPeople +" bushels are available for the people of the city.\n" +
+        "*******************************************************************\n");
     }
 }
