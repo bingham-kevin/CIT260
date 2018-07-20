@@ -62,22 +62,37 @@ public class HelpMenuView extends MenuView{
     }
     
     public void viewGoals(){
-        System.out.println("\nHelp option 1 selected.");
+        System.out.println("\nThe Goals of the City of Aaron are simple!\n"
+                + "You are tasked with leading and growing the aforementioned\n"
+                + "city through ten years, ensuring crops are grown, the people\n"
+                + "are fed, and there is an offering given. you have access to\n"
+                + "tools, animals, and other resources to help you through these\n"
+                + "ten years! Do well, and the city will thrive. do poorly and\n"
+                + "your term may end more abruptly than you might hope!");
     }
     
     public void cityOfAaronHelp(){
-        System.out.println("\nHelp option 2 selected.");
+        System.out.println("\nThe City of Aaron is located in America in ancient\n"
+                + "times. It is located in the vicinity of Ammonihah, as well\n"
+                + "as near the cities of Moroni and Nephihah. It is a nephite\n"
+                + "city.");
     }
    
     public void viewMapHelp(){
-        System.out.println("\nHelp option 3 selected.");
+        System.out.println("\nYou can view the map through the Game menu screen.\n"
+                + "This allows you to get a good look at the city and surrounding\n"
+                + "countryside. To do this, select the first option in the game menu");
     }
     
     public void viewMoveHelp(){
-        System.out.println("\nHelp option 4 selected.");
+        System.out.println("\nTo Move around the city, select the third option\n"
+                + "in the game's menu, then input the coordinates, x then y, of\n"
+                + "the location you wish to visit within the city or surrounding area!");
     }
     
     public void viewListHelp(){
-        System.out.println("\nHelp option 5 selected.");
+        System.out.println("\nTo view the list of the city's provisions, go to the\n"
+                + "second option in the game's menu, then select from that list\n"
+                + "the actual list you wish to view!.");
     }
 }
